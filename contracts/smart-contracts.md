@@ -70,7 +70,8 @@ struct Report {
     uint256 propertyId;
     string reportType; // "inspection", "title", "renovation", etc.
     string reportHash; // IPFS hash of the report content
-    address creator;
+    address author; // Home inspector who authored the report
+    address owner; // User who paid for the inspection
     uint256 price;
     uint256 createdAt;
     bool isVerified;
@@ -123,11 +124,13 @@ function createReport(
     uint256 propertyId,
     string memory reportType,
     string memory reportHash,
+    address author,
+    address owner,
     uint256 price
 ) external propertyExists(propertyId) returns (uint256)
 ```
 
-Creates a new report for a property and returns its ID.
+Creates a new report for a property and returns its ID. The author is the home inspector who created the report, and the owner is the user who paid for the inspection.
 
 ```solidity
 function verifyReport(uint256 reportId) external reportExists(reportId) onlyOwner
@@ -179,7 +182,7 @@ Checks if a user has purchased a report.
 event PropertyCreated(uint256 indexed id, string propertyAddress, address indexed owner);
 event PropertyUpdated(uint256 indexed id, string propertyAddress, address indexed owner);
 event PropertyVerified(uint256 indexed id, string propertyAddress);
-event ReportCreated(uint256 indexed id, uint256 indexed propertyId, string reportType, address indexed creator);
+event ReportCreated(uint256 indexed id, uint256 indexed propertyId, string reportType, address indexed author, address owner);
 event ReportVerified(uint256 indexed id, uint256 indexed propertyId);
 event ReportPurchased(uint256 indexed reportId, address indexed buyer, uint256 price);
 ```
@@ -188,8 +191,11 @@ event ReportPurchased(uint256 indexed reportId, address indexed buyer, uint256 p
 
 The HomeFax contract is deployed on the Base blockchain. The current deployment addresses are:
 
-- **Base Goerli (Testnet)**: `0x0000000000000000000000000000000000000000` (placeholder)
+- **Hardhat Network (Local)**: `0x5FbDB2315678afecb367f032d93F642f64180aa3`
+- **Base Goerli (Testnet)**: Deployment in progress (Base Goerli RPC endpoints experiencing issues)
 - **Base Mainnet**: `0x0000000000000000000000000000000000000000` (placeholder)
+
+For Base Goerli deployments, it's recommended to use a dedicated API key from providers like Alchemy, Infura, or QuickNode for more reliable access.
 
 ## Interacting with the Contracts
 
@@ -273,11 +279,28 @@ The contract implements several gas optimization techniques:
 
 ## Testing
 
-The contract includes comprehensive tests to ensure functionality and security. Run the tests using:
+The contract includes comprehensive tests to ensure functionality and security. The tests cover property management, report management, and user interactions.
+
+### Required Dependencies
+
+To run the tests, you need to install the following dependencies:
+
+```bash
+npm install --save-dev --legacy-peer-deps "@nomicfoundation/hardhat-chai-matchers@^2.0.0" "@nomicfoundation/hardhat-ethers@^3.0.0" "@nomicfoundation/hardhat-ignition-ethers@^0.15.0" "@nomicfoundation/hardhat-network-helpers@^1.0.0" "@nomicfoundation/hardhat-verify@^2.0.0" "@typechain/ethers-v6@^0.5.0" "@typechain/hardhat@^9.0.0" "@types/chai@^4.2.0" "@types/mocha@>=9.1.0" "chai@^4.2.0" "hardhat-gas-reporter@^1.0.8" "solidity-coverage@^0.8.1" "typechain@^8.3.0" "@nomicfoundation/hardhat-ignition@^0.15.10" "@nomicfoundation/ignition-core@^0.15.10"
+```
+
+Run the tests using:
 
 ```bash
 npx hardhat test
 ```
+
+The test suite includes tests for:
+
+- Property creation, updating, and verification
+- Report creation, verification, and purchasing
+- Access control and permissions
+- Payment distribution
 
 ## Auditing
 

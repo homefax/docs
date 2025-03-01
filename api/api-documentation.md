@@ -11,7 +11,7 @@ http://localhost:3001
 For production:
 
 ```
-https://api.homefax.io
+https://api.homefax.xyz
 ```
 
 ## Authentication
