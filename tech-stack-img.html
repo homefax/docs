@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomeFax Tech Stack</title>
+    <style>
+      :root {
+        --primary-color: #3498db;
+        --secondary-color: #2c3e50;
+        --accent-color: #e74c3c;
+        --light-bg: #f8f9fa;
+        --dark-bg: #343a40;
+        --text-color: #333;
+        --light-text: #f8f9fa;
+        --border-radius: 8px;
+        --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --transition: all 0.3s ease;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: var(--light-bg);
+        color: var(--text-color);
+        line-height: 1.6;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 40px;
+        padding: 20px;
+        background-color: var(--secondary-color);
+        color: var(--light-text);
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+
+      .subtitle {
+        font-size: 1.2rem;
+        opacity: 0.8;
+      }
+
+      .tech-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+        margin-bottom: 40px;
+      }
+
+      .tech-category {
+        background-color: white;
+        border-radius: var(--border-radius);
+        padding: 20px;
+        box-shadow: var(--box-shadow);
+        transition: var(--transition);
+      }
+
+      .tech-category:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .tech-category h2 {
+        color: var(--primary-color);
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--light-bg);
+        font-size: 1.5rem;
+      }
+
+      .tech-list {
+        list-style-type: none;
+      }
+
+      .tech-item {
+        margin-bottom: 15px;
+        padding-left: 20px;
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+
+      .tech-item::before {
+        content: "•";
+        color: var(--accent-color);
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+      }
+
+      .tech-logo {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+        object-fit: contain;
+      }
+
+      .tech-info {
+        flex: 1;
+      }
+
+      .tech-name {
+        font-weight: bold;
+      }
+
+      .tech-version {
+        font-size: 0.9rem;
+        color: #666;
+      }
+
+      .tech-details {
+        font-size: 0.9rem;
+        margin-top: 3px;
+        color: #666;
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 40px;
+        padding: 20px;
+        background-color: var(--secondary-color);
+        color: var(--light-text);
+        border-radius: var(--border-radius);
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 768px) {
+        .tech-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>HomeFax Tech Stack</h1>
+        <p class="subtitle">
+          A comprehensive overview of technologies used in the HomeFax project
+        </p>
+      </header>
+
+      <div class="tech-grid">
+        <!-- Frontend -->
+        <div class="tech-category">
+          <h2>Frontend</h2>
+          <ul class="tech-list">
+            <li class="tech-item">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+                alt="React Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">
+                  React <span class="tech-version">19.0.0</span>
+                </div>
+              </div>
+            </li>
+            <li class="tech-item">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg"
+                alt="TypeScript Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">
+                  TypeScript <span class="tech-version">4.9.5</span>
+                </div>
+              </div>
+            </li>
+            <li class="tech-item">
+              <img
+                src="https://vitejs.dev/logo.svg"
+                alt="Vite Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">
+                  Vite <span class="tech-version">6.2.0</span>
+                </div>
+                <div class="tech-details">Build tool</div>
+              </div>
+            </li>
+            <li class="tech-item">
+              <img
+                src="https://avatars.githubusercontent.com/u/33931825?s=200&v=4"
+                alt="CRACO Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">CRACO</div>
+                <div class="tech-details">
+                  Create React App Configuration Override
+                </div>
+              </div>
+            </li>
+            <li class="tech-item">
+              <img
+                src="https://raw.githubusercontent.com/chakra-ui/chakra-ui/main/logo/logo-colored.svg"
+                alt="Chakra UI Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">
+                  Chakra UI <span class="tech-version">3.8.1</span>
+                </div>
+                <div class="tech-details">UI component library</div>
+              </div>
+            </li>
+            <li class="tech-item">
+              <img
+                src="https://redux.js.org/img/redux.svg"
+                alt="Redux Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">Redux Toolkit</div>
+                <div class="tech-details">State management</div>
+              </div>
+            </li>
+            <li class="tech-item">
+              <img
+                src="https://reactrouter.com/favicon-light.png"
+                alt="React Router Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">
+                  React Router <span class="tech-version">7.2.0</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Backend -->
+        <div class="tech-category">
+          <h2>Backend</h2>
+          <ul class="tech-list">
+            <li class="tech-item">
+              <img
+                src="https://nestjs.com/img/logo-small.svg"
+                alt="NestJS Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">
+                  NestJS <span class="tech-version">11.x</span>
+                </div>
+                <div class="tech-details">Node.js framework</div>
+              </div>
+            </li>
+            <li class="tech-item">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg"
+                alt="TypeScript Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">TypeScript</div>
+              </div>
+            </li>
+            <li class="tech-item">
+              <img
+                src="https://static1.smartbear.co/swagger/media/assets/swagger_fav.png"
+                alt="Swagger Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">Swagger/OpenAPI</div>
+                <div class="tech-details">API documentation</div>
+              </div>
+            </li>
+            <li class="tech-item">
+              <img
+                src="https://jwt.io/img/pic_logo.svg"
+                alt="JWT Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">JWT & Passport</div>
+                <div class="tech-details">Authentication</div>
+              </div>
+            </li>
+            <li class="tech-item">
+              <img
+                src="https://github.com/typestack.png"
+                alt="Class Validator Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">class-validator</div>
+                <div class="tech-details">Input validation</div>
+              </div>
+            </li>
+            <li class="tech-item">
+              <img
+                src="https://avatars.githubusercontent.com/u/9682013"
+                alt="Winston Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">Winston</div>
+                <div class="tech-details">Logging</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Blockchain/Smart Contracts -->
+        <div class="tech-category">
+          <h2>Blockchain/Smart Contracts</h2>
+          <ul class="tech-list">
+            <li class="tech-item">
+              <img
+                src="https://hardhat.org/apple-touch-icon.png"
+                alt="Hardhat Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">Hardhat</div>
+                <div class="tech-details">Development framework</div>
+              </div>
+            </li>
+            <li class="tech-item">
+              <img
+                src="https://docs.soliditylang.org/en/v0.8.20/_static/logo.svg"
+                alt="Solidity Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">
+                  Solidity <span class="tech-version">0.8.20</span>
+                </div>
+                <div class="tech-details">Smart contract language</div>
+              </div>
+            </li>
+            <li class="tech-item">
+              <img
+                src="https://avatars.githubusercontent.com/u/20820676"
+                alt="OpenZeppelin Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">OpenZeppelin Contracts</div>
+                <div class="tech-details">Security library</div>
+              </div>
+            </li>
+            <li class="tech-item">
+              <img
+                src="https://docs.ethers.org/v5/static/logo.svg"
+                alt="Ethers.js Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">Ethers.js</div>
+                <div class="tech-details">Ethereum library</div>
+              </div>
+            </li>
+            <li class="tech-item">
+              <img
+                src="https://base.org/favicon.ico"
+                alt="Base Network Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">Base Network</div>
+                <div class="tech-details">Mainnet and Goerli Testnet</div>
+              </div>
+            </li>
+            <li class="tech-item">
+              <img
+                src="https://hardhat.org/apple-touch-icon.png"
+                alt="Hardhat Ignition Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">Hardhat Ignition</div>
+                <div class="tech-details">Deployment</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Web3 Integration -->
+        <div class="tech-category">
+          <h2>Web3 Integration</h2>
+          <ul class="tech-list">
+            <li class="tech-item">
+              <img
+                src="https://avatars.githubusercontent.com/u/37784886"
+                alt="Web3Modal Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">Web3Modal</div>
+                <div class="tech-details">Wallet connection</div>
+              </div>
+            </li>
+            <li class="tech-item">
+              <img
+                src="https://avatars.githubusercontent.com/u/62367818"
+                alt="Web3 React Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">@web3-react/core</div>
+              </div>
+            </li>
+            <li class="tech-item">
+              <img
+                src="https://www.coinbase.com/assets/favicon-32x32.png"
+                alt="Coinbase Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">@coinbase/onchainkit</div>
+              </div>
+            </li>
+            <li class="tech-item">
+              <img
+                src="https://avatars.githubusercontent.com/u/113565481"
+                alt="Okto Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">@okto_web3/react-sdk</div>
+              </div>
+            </li>
+            <li class="tech-item">
+              <img
+                src="https://ethstorage.io/favicon.ico"
+                alt="EthStorage Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">EthStorage SDK</div>
+                <div class="tech-details">Decentralized storage</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Database -->
+        <div class="tech-category">
+          <h2>Database</h2>
+          <ul class="tech-list">
+            <li class="tech-item">
+              <img
+                src="https://www.postgresql.org/media/img/about/press/elephant.png"
+                alt="PostgreSQL Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">PostgreSQL</div>
+              </div>
+            </li>
+            <li class="tech-item">
+              <img
+                src="https://avatars.githubusercontent.com/u/20165699"
+                alt="TypeORM Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">TypeORM</div>
+                <div class="tech-details">Object-Relational Mapping</div>
+              </div>
+            </li>
+            <li class="tech-item">
+              <img
+                src="https://nestjs.com/img/logo-small.svg"
+                alt="NestJS Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">nestjs-typeorm-paginate</div>
+                <div class="tech-details">Pagination</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Storage -->
+        <div class="tech-category">
+          <h2>Decentralized Storage</h2>
+          <ul class="tech-list">
+            <li class="tech-item">
+              <img
+                src="https://ipfs.tech/images/ipfs-logo.svg"
+                alt="IPFS Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">IPFS</div>
+                <div class="tech-details">InterPlanetary File System</div>
+              </div>
+            </li>
+            <li class="tech-item">
+              <img
+                src="https://ethstorage.io/favicon.ico"
+                alt="EthStorage Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">EthStorage</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- DevOps/Deployment -->
+        <div class="tech-category">
+          <h2>DevOps/Deployment</h2>
+          <ul class="tech-list">
+            <li class="tech-item">
+              <img
+                src="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico"
+                alt="AWS Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">AWS S3</div>
+                <div class="tech-details">Static hosting</div>
+              </div>
+            </li>
+            <li class="tech-item">
+              <img
+                src="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico"
+                alt="AWS Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">AWS CloudFront</div>
+                <div class="tech-details">Content delivery</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Testing -->
+        <div class="tech-category">
+          <h2>Testing</h2>
+          <ul class="tech-list">
+            <li class="tech-item">
+              <img
+                src="https://jestjs.io/img/favicon/favicon.ico"
+                alt="Jest Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">Jest</div>
+              </div>
+            </li>
+            <li class="tech-item">
+              <img
+                src="https://testing-library.com/img/octopus-64x64.png"
+                alt="React Testing Library Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">React Testing Library</div>
+              </div>
+            </li>
+            <li class="tech-item">
+              <img
+                src="https://avatars.githubusercontent.com/u/19378031"
+                alt="Supertest Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">Supertest</div>
+                <div class="tech-details">API testing</div>
+              </div>
+            </li>
+            <li class="tech-item">
+              <img
+                src="https://hardhat.org/apple-touch-icon.png"
+                alt="Hardhat Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">Hardhat Chai Matchers</div>
+                <div class="tech-details">Contract testing</div>
+              </div>
+            </li>
+            <li class="tech-item">
+              <img
+                src="https://avatars.githubusercontent.com/u/22632046"
+                alt="Solidity Coverage Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">Solidity Coverage</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Development Tools -->
+        <div class="tech-category">
+          <h2>Development Tools</h2>
+          <ul class="tech-list">
+            <li class="tech-item">
+              <img
+                src="https://eslint.org/favicon.ico"
+                alt="ESLint Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">ESLint</div>
+              </div>
+            </li>
+            <li class="tech-item">
+              <img
+                src="https://prettier.io/icon.png"
+                alt="Prettier Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">Prettier</div>
+              </div>
+            </li>
+            <li class="tech-item">
+              <img
+                src="https://cdn.worldvectorlogo.com/logos/mixpanel.svg"
+                alt="Mixpanel Logo"
+                class="tech-logo"
+              />
+              <div class="tech-info">
+                <div class="tech-name">Mixpanel</div>
+                <div class="tech-details">Analytics</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <footer>
+        <p>HomeFax Tech Stack Overview - Generated for presentation purposes</p>
+      </footer>
+    </div>
+  </body>
+</html>
